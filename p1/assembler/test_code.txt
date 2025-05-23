@@ -1,0 +1,15 @@
+; Comentario
+; x = a +b
+
+; Variaveis
+; posicao valor
+.DATA
+80 5 ; comentario
+81 2
+
+
+.CODE
+LDA 80
+ADD 81 ; comentario
+STA 82
+HLT

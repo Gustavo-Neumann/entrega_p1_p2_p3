@@ -1,0 +1,8 @@
+PROGRAMA "calc":
+INICIO
+x = 5
+y = 10
+z = x * y
+k = z - 2
+RES k
+FIM
