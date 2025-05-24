@@ -154,8 +154,6 @@ int main() {
         pc++;
     }
     
-    printf("Expressão capturada: %s\n", output_buffer);
-    
     char* equals_pos = strchr(output_buffer, '=');
     if (equals_pos && equals_pos > output_buffer) {
         *equals_pos = '\0';
@@ -169,17 +167,14 @@ int main() {
             *end = '\0';
             end--;
         }
-        
-        printf("Variável: %s\n", var_name);
-        printf("Expressão: %s\n", expression);
-        
+
         ExprParser parser = {expression, 0};
         expr_advance_parser(&parser);
         
         Node* expr_ast = expr_parse_expression(&parser);
         if (expr_ast) {
             int result = eval_expression(expr_ast);
-            printf("Resultado: %s = %d\n", var_name, result);
+            printf("%s = %d\n", var_name, result);
         } else {
             printf("Erro: Não foi possível parsear a expressão\n");
         }
